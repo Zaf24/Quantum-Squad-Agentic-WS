@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Squad - Onboarding Process Repair</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Mascot image styles */
+        .mascot-img {
+            width: 180px;
+            height: 180px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+        
+        .logo-small {
+            height: 24px;
+            width: auto;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+        
+        .logo-medium {
+            height: 40px;
+            width: auto;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        
+        .header-logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .header-logo {
+            height: 60px;
+            width: auto;
+            margin-right: 15px;
+        }
+    </style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f3f2f1 0%, #e1e5e9 50%, #f8f9fa 100%);
+            min-height: 100vh;
+            color: #323130;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 80px 60px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #e1e5e9 100%);
+            border-radius: 24px;
+            margin-bottom: 80px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+            border: 1px solid #d2d0ce;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #0078d4, #106ebe, #107c10, #ff8c00);
+        }
+
+        .logo {
+            font-size: 5rem;
+            margin-bottom: 40px;
+            animation: pulse 2s infinite;
+            filter: drop-shadow(0 6px 12px rgba(0, 120, 212, 0.3));
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .title {
+            font-size: 3.5rem;
+            color: #323130;
+            margin-bottom: 30px;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            background: linear-gradient(135deg, #323130, #0078d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            color: #605e5c;
+            margin-bottom: 50px;
+            line-height: 1.7;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
+        }
+
+        .mission-brief {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 20px;
+            padding: 60px;
+            margin-bottom: 80px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid #d2d0ce;
+            position: relative;
+        }
+
+        .mission-brief::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #0078d4, #106ebe, #107c10);
+            border-radius: 20px 20px 0 0;
+        }
+
+        .mission-title {
+            font-size: 2.5rem;
+            color: #323130;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #323130, #0078d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .mission-title i {
+            color: #0078d4;
+            font-size: 2rem;
+            filter: drop-shadow(0 2px 4px rgba(0, 120, 212, 0.3));
+        }
+
+        .scenario {
+            background: linear-gradient(135deg, #0078d4, #106ebe, #107c10);
+            color: white;
+            padding: 50px;
+            border-radius: 20px;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0, 120, 212, 0.4);
+        }
+
+        .scenario::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .scenario-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .alex-intro {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .challenge {
+            background: linear-gradient(135deg, #fff4ce 0%, #fff8e1 50%, #ffecb3 100%);
+            color: #323130;
+            padding: 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+            border-left: 8px solid #ff8c00;
+            box-shadow: 0 8px 24px rgba(255, 140, 0, 0.2);
+        }
+
+        .agents-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 50px;
+            margin: 80px 0;
+        }
+
+        .agent-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 24px;
+            padding: 50px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #d2d0ce;
+        }
+
+        .agent-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.18);
+        }
+
+        .agent-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, #0078d4, #106ebe, #107c10);
+            border-radius: 24px 24px 0 0;
+        }
+
+        .agent-icon {
+            font-size: 4rem;
+            margin-bottom: 30px;
+            display: block;
+            filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.15));
+        }
+
+        .agent-name {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #323130;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #323130, #0078d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .agent-timeline {
+            background: linear-gradient(135deg, #e1e5e9 0%, #d2d0ce 100%);
+            color: #605e5c;
+            padding: 12px 20px;
+            border-radius: 24px;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            display: inline-block;
+            border: 1px solid #a19f9d;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .agent-description {
+            color: #605e5c;
+            line-height: 1.7;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .agent-features {
+            list-style: none;
+        }
+
+        .agent-features li {
+            padding: 10px 0;
+            color: #605e5c;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1rem;
+        }
+
+        .agent-features li::before {
+            content: '✓';
+            color: #107c10;
+            font-weight: bold;
+            font-size: 1.2rem;
+            filter: drop-shadow(0 2px 4px rgba(16, 124, 16, 0.3));
+        }
+
+        .cta-section {
+            text-align: center;
+            margin: 100px 0;
+            padding: 80px 60px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #e1e5e9 100%);
+            border-radius: 24px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+            border: 1px solid #d2d0ce;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #0078d4, #106ebe, #107c10);
+            color: white;
+            padding: 20px 60px;
+            border: none;
+            border-radius: 16px;
+            font-size: 1.3rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 8px 24px rgba(0, 120, 212, 0.4);
+            letter-spacing: 0.02em;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0, 120, 212, 0.5);
+            background: linear-gradient(135deg, #106ebe, #005a9e, #004578);
+        }
+
+        .process-health {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 24px;
+            padding: 60px;
+            margin: 80px 0;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid #d2d0ce;
+            position: relative;
+        }
+
+        .process-health::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #d13438, #ff8c00, #107c10, #0078d4);
+            border-radius: 24px 24px 0 0;
+        }
+
+        .health-title {
+            font-size: 2.5rem;
+            color: #323130;
+            margin-bottom: 40px;
+            text-align: center;
+            font-weight: 800;
+            background: linear-gradient(135deg, #323130, #0078d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .repairs {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .repair {
+            text-align: center;
+            padding: 40px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #f3f2f1 0%, #e1e5e9 50%, #d2d0ce 100%);
+            flex: 1;
+            min-width: 240px;
+            border: 1px solid #a19f9d;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        .repair:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+        }
+
+        .repair-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.15));
+        }
+
+        .repair-name {
+            font-weight: 800;
+            color: #323130;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            background: linear-gradient(135deg, #323130, #0078d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .repair-status {
+            color: #605e5c;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .health-bar {
+            width: 100%;
+            height: 12px;
+            background: linear-gradient(135deg, #e1e5e9 0%, #d2d0ce 100%);
+            border-radius: 8px;
+            margin: 20px 0;
+            overflow: hidden;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .health-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #d13438, #ff8c00, #107c10, #0078d4);
+            border-radius: 8px;
+            transition: width 0.5s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .navigation {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            border: 1px solid #d2d0ce;
+        }
+
+        /* Content layout with sticky sidebar */
+        .content-layout {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 32px;
+            align-items: start;
+        }
+
+        .side-nav {
+            position: sticky;
+            top: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border: 1px solid #d2d0ce;
+            border-radius: 12px;
+            padding: 16px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        .side-title {
+            font-weight: 700;
+            color: #323130;
+            margin-bottom: 8px;
+        }
+
+        .side-links {
+            list-style: none;
+        }
+
+        .side-links li { margin: 6px 0; }
+
+        .side-link {
+            display: block;
+            padding: 8px 12px;
+            border-radius: 8px;
+            color: #605e5c;
+            text-decoration: none;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .side-link:hover { background: #f3f2f1; color: #0078d4; }
+        .side-link.active { background: linear-gradient(135deg, #f3f2f1, #e1e5e9); color: #0078d4; box-shadow: 0 2px 8px rgba(0,120,212,0.2); }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #323130;
+            text-decoration: none;
+            background: linear-gradient(135deg, #323130, #0078d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: #605e5c;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #0078d4;
+            background: linear-gradient(135deg, #f3f2f1, #e1e5e9);
+            transform: translateY(-2px);
+        }
+
+        .nav-link.active {
+            color: #0078d4;
+            background: linear-gradient(135deg, #f3f2f1, #e1e5e9);
+            box-shadow: 0 2px 8px rgba(0, 120, 212, 0.2);
+        }
+
+        .nav-link.coming-soon {
+            color: #a19f9d;
+            cursor: not-allowed;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #605e5c;
+        }
+
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2rem;
+            }
+            
+            .agents-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .repairs {
+                flex-direction: column;
+            }
+            
+            .content-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .side-nav { display: none; }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navigation">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">
+                    <img src="images/Unknown.jpeg" alt="Logo" class="logo-small">
+                    Quantum Squad
+                </a>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="first-friend-agent.html" class="nav-link">Engine Repair</a>
+                    <a href="#" class="nav-link coming-soon">Transmission Fix (Coming Soon)</a>
+                    <a href="#" class="nav-link coming-soon">Performance Tune (Coming Soon)</a>
+                </div>
+            </div>
+        </nav>
+
+        <header class="header" id="top">
+            <div class="header-logo-container">
+                <img src="images/Unknown.jpeg" alt="Logo" class="header-logo" style="width: 120px; height: 120px; object-fit: contain;">
+            </div>
+            <h1 class="title">Quantum Squad - Onboarding Process Repair</h1>
+            <p class="subtitle">Transform your rusty, old-school onboarding process into a modern, intelligent experience using Microsoft Copilot Studio</p>
+        </header>
+
+        <div class="content-layout">
+            <aside class="side-nav">
+                <div class="side-title">On this page</div>
+                <ul class="side-links">
+                    <li><a class="side-link" href="#diagnosis">Process Diagnosis</a></li>
+                    <li><a class="side-link" href="#health">Process Health</a></li>
+                    <li><a class="side-link" href="#agents">Agents</a></li>
+                    <li><a class="side-link" href="#cta">Get Started</a></li>
+                </ul>
+            </aside>
+
+            <div>
+        <div class="mission-brief" id="diagnosis">
+            <h2 class="mission-title">
+                <i class="fas fa-wrench"></i>
+                Process Diagnosis: Alex's Onboarding Journey
+            </h2>
+            
+            <div class="scenario">
+                <div class="scenario-content">
+                    <div class="alex-intro">
+                        <strong>Meet Alex</strong> - a bright new hire starting his journey at Quantum Corp. 
+                        Like many new employees, Alex is excited but nervous about his first day. 
+                        He's prepared his documents, researched the company, and is ready to make a great impression.
+                    </div>
+                </div>
+            </div>
+
+            <div class="challenge">
+                <strong>🚨 The Problem:</strong> What happens when Alex arrives on Day 1 and discovers his manager is unexpectedly on leave? 
+                The current onboarding process is like a broken car - it can't adapt to unexpected situations, leaving new hires stranded and disconnected.
+            </div>
+
+            <p style="margin-top: 20px; line-height: 1.6; color: #605e5c;">
+                This is where our <strong>Quantum Squad Repair Agents</strong> come in. We'll build three specialized agents 
+                that work like a professional repair team, each fixing a critical component of the onboarding process. 
+                Think of it as a complete engine overhaul - each agent repairs a different system, and together they restore 
+                the entire process to 100% operational efficiency.
+            </p>
+        </div>
+
+        <div class="process-health" id="health">
+            <h2 class="health-title">🔧 Process Health Restoration</h2>
+            <div class="health-bar">
+                <div class="health-fill" style="width: 30%;"></div>
+            </div>
+            <p style="text-align: center; color: #605e5c; margin: 10px 0;">Current Process Health: 30% - Critical Issues Detected</p>
+            
+            <div class="repairs">
+                <div class="repair">
+                    <div class="repair-icon">🔧</div>
+                    <div class="repair-name">Engine Repair</div>
+                    <div class="repair-status">First Friend Agent</div>
+                    <div style="margin-top: 10px; font-size: 0.8rem; color: #605e5c;">Fixes Day 1 breakdowns</div>
+                </div>
+                <div class="repair">
+                    <div class="repair-icon">⚙️</div>
+                    <div class="repair-name">Transmission Fix</div>
+                    <div class="repair-status">Onboard U Agent</div>
+                    <div style="margin-top: 10px; font-size: 0.8rem; color: #605e5c;">Smooths pre-boarding</div>
+                </div>
+                <div class="repair">
+                    <div class="repair-icon">🚀</div>
+                    <div class="repair-name">Performance Tune</div>
+                    <div class="repair-status">Upskill Buddy Agent</div>
+                    <div style="margin-top: 10px; font-size: 0.8rem; color: #605e5c;">Optimizes long-term growth</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="agents-grid" id="agents">
+            <div class="agent-card">
+                <img src="images/First Friend.png" alt="First Friend Agent Mascot" class="mascot-img">
+                <h3 class="agent-name">First Friend Agent</h3>
+                <span class="agent-timeline">Day 1 - Primary Focus</span>
+                <p class="agent-description">
+                    Alex's first-day companion that steps in when his manager is unexpectedly unavailable. 
+                    This agent ensures Alex feels welcomed, connected, and supported from the moment he arrives.
+                </p>
+                <ul class="agent-features">
+                    <li>Warm welcome and orientation</li>
+                    <li>Manager absence detection</li>
+                    <li>Team member connections</li>
+                    <li>Teams group creation</li>
+                    <li>First-day priority guidance</li>
+                </ul>
+                <div style="margin-top: 20px; text-align: center;">
+                    <a href="first-friend-agent.html" class="cta-button" style="padding: 10px 20px; font-size: 0.9rem;">
+                        <i class="fas fa-wrench"></i> Start Engine Repair
+                    </a>
+                </div>
+            </div>
+
+            <div class="agent-card">
+                <img src="images/Onboard U.png" alt="Onboard U Agent Mascot" class="mascot-img">
+                <h3 class="agent-name">Onboard U Agent</h3>
+                <span class="agent-timeline">T-30 Days</span>
+                <p class="agent-description">
+                    The pre-boarding specialist that prepares everything Alex needs before his first day. 
+                    This agent handles documentation, system access, and workspace setup coordination.
+                </p>
+                <ul class="agent-features">
+                    <li>Document preparation</li>
+                    <li>System access requests</li>
+                    <li>Workspace setup</li>
+                    <li>Pre-boarding checklist</li>
+                    <li>Welcome package coordination</li>
+                </ul>
+            </div>
+
+            <div class="agent-card">
+                <img src="images/Upskill Buddy.png" alt="Upskill Buddy Agent Mascot" class="mascot-img">
+                <h3 class="agent-name">Upskill Buddy Agent</h3>
+                <span class="agent-timeline">T+30 Days</span>
+                <p class="agent-description">
+                    Alex's learning companion that helps him grow and develop after his initial onboarding. 
+                    This agent provides personalized learning paths and skill development guidance.
+                </p>
+                <ul class="agent-features">
+                    <li>Learning path recommendations</li>
+                    <li>Skill gap analysis</li>
+                    <li>Training scheduling</li>
+                    <li>Progress tracking</li>
+                    <li>Career development guidance</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="cta-section" id="cta">
+            <h2 style="color: #323130; margin-bottom: 20px; font-size: 1.8rem;">Ready to Start the Repair?</h2>
+            <p style="color: #605e5c; margin-bottom: 30px; font-size: 1.1rem;">
+                Begin with the Engine Repair (First Friend Agent) and get Alex's onboarding back on track
+            </p>
+            <a href="#engine-repair" class="cta-button">
+                <i class="fas fa-wrench"></i> Start Engine Repair
+            </a>
+        </div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>Created with 💡 by Quantum Squad | Inspired by Microsoft Agent Academy</p>
+            <p style="margin-top: 10px; font-size: 0.9rem;">
+                <a href="https://microsoft.github.io/agent-academy/" style="color: #0078d4; text-decoration: none;">
+                    Learn more about Microsoft Agent Academy
+                </a>
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // Add some interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Navigation for main CTA button
+            document.querySelector('.cta-section .cta-button').addEventListener('click', function(e) {
+                e.preventDefault();
+                window.location.href = 'first-friend-agent.html';
+            });
+
+            // Add hover effects to agent cards
+            const agentCards = document.querySelectorAll('.agent-card');
+            agentCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+
+            // Side nav active link highlighting
+            const links = document.querySelectorAll('.side-link');
+            const sections = Array.from(links).map(l => document.querySelector(l.getAttribute('href'))).filter(Boolean);
+
+            const onScroll = () => {
+                let index = sections.findIndex((sec, i) => {
+                    const rect = sec.getBoundingClientRect();
+                    return rect.top <= 120 && rect.bottom >= 120;
+                });
+                if (index === -1) return;
+                links.forEach(l => l.classList.remove('active'));
+                links[index].classList.add('active');
+            };
+            document.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+            
+            // Smooth internal link scroll (already enabled via CSS, but ensure offset feel)
+            links.forEach(link => {
+                link.addEventListener('click', () => setTimeout(onScroll, 350));
+            });
+        });
+    </script>
+</body>
+</html>
