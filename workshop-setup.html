@@ -19,6 +19,10 @@
             width: auto;
             vertical-align: middle;
             margin-right: 8px;
+            background: transparent;
+            border-radius: 4px;
+            filter: brightness(1.2) contrast(1.1);
+            mix-blend-mode: screen;
         }
         
         .logo-medium {
@@ -39,6 +43,10 @@
             height: 60px;
             width: auto;
             margin-right: 15px;
+            background: transparent;
+            border-radius: 8px;
+            filter: brightness(1.2) contrast(1.1);
+            mix-blend-mode: screen;
         }
 
         * {
@@ -48,30 +56,33 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #f3f2f1 0%, #e1e5e9 50%, #f8f9fa 100%);
+            font-family: 'Segoe UI Variable', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 25%, #2d2d30 50%, #1a1a1a 75%, #0a0a0a 100%);
             min-height: 100vh;
-            color: #323130;
-            line-height: 1.6;
+            color: #ffffff;
+            line-height: 1.7;
             scroll-behavior: smooth;
+            font-weight: 400;
+            letter-spacing: 0.01em;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 60px 40px;
+            padding: 20px;
         }
 
         .header {
             text-align: center;
-            padding: 80px 60px;
-            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #e1e5e9 100%);
+            padding: 60px 40px;
+            background: linear-gradient(135deg, #1e1e1e 0%, #2d2d30 25%, #3c3c3c 50%, #2d2d30 75%, #1e1e1e 100%);
             border-radius: 24px;
-            margin-bottom: 80px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
-            border: 1px solid #d2d0ce;
+            margin-bottom: 60px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             position: relative;
             overflow: hidden;
+            backdrop-filter: blur(20px);
         }
 
         .header::before {
@@ -85,35 +96,38 @@
         }
 
         .title {
-            font-size: 3.5rem;
-            color: #323130;
+            font-size: 2.8rem;
+            color: #ffffff;
             margin-bottom: 30px;
-            font-weight: 800;
-            letter-spacing: -0.03em;
-            background: linear-gradient(135deg, #323130, #0078d4);
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            background: linear-gradient(135deg, #ffffff 0%, #00d4ff 50%, #0078d4 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
         }
 
         .subtitle {
-            font-size: 1.4rem;
-            color: #605e5c;
-            margin-bottom: 50px;
-            line-height: 1.7;
-            max-width: 900px;
+            font-size: 1.2rem;
+            color: #b3b3b3;
+            margin-bottom: 0;
+            line-height: 1.6;
+            max-width: 800px;
             margin-left: auto;
             margin-right: auto;
-            font-weight: 400;
+            font-weight: 300;
+            letter-spacing: 0.01em;
         }
 
         .navigation {
-            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-            border-radius: 16px;
-            padding: 30px;
-            margin-bottom: 40px;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-            border: 1px solid #d2d0ce;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d30 50%, #1a1a1a 100%);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
         }
 
         /* Content layout with sticky sidebar */
@@ -127,17 +141,19 @@
         .side-nav {
             position: sticky;
             top: 20px;
-            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-            border: 1px solid #d2d0ce;
-            border-radius: 12px;
-            padding: 16px;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d30 100%);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
         }
 
         .side-title {
-            font-weight: 700;
-            color: #323130;
-            margin-bottom: 8px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
         }
 
         .side-links {
@@ -148,15 +164,16 @@
 
         .side-link {
             display: block;
-            padding: 8px 12px;
-            border-radius: 8px;
-            color: #605e5c;
+            padding: 10px 16px;
+            border-radius: 10px;
+            color: #b3b3b3;
             text-decoration: none;
-            transition: background 0.2s ease, color 0.2s ease;
+            transition: all 0.3s ease;
+            font-weight: 300;
         }
 
-        .side-link:hover { background: #f3f2f1; color: #0078d4; }
-        .side-link.active { background: linear-gradient(135deg, #f3f2f1, #e1e5e9); color: #0078d4; box-shadow: 0 2px 8px rgba(0,120,212,0.2); }
+        .side-link:hover { background: rgba(0, 212, 255, 0.1); color: #00d4ff; transform: translateX(4px); }
+        .side-link.active { background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(0, 120, 212, 0.2)); color: #00d4ff; box-shadow: 0 4px 16px rgba(0, 212, 255, 0.3); }
 
         .nav-container {
             display: flex;
@@ -166,14 +183,15 @@
         }
 
         .nav-logo {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: #323130;
+            font-size: 2rem;
+            font-weight: 600;
+            color: #ffffff;
             text-decoration: none;
-            background: linear-gradient(135deg, #323130, #0078d4);
+            background: linear-gradient(135deg, #ffffff 0%, #00d4ff 50%, #0078d4 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            letter-spacing: -0.01em;
         }
 
         .nav-links {
@@ -183,24 +201,25 @@
         }
 
         .nav-link {
-            color: #605e5c;
+            color: #b3b3b3;
             text-decoration: none;
-            font-weight: 600;
-            padding: 10px 20px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
+            font-weight: 500;
+            padding: 12px 24px;
+            border-radius: 12px;
+            transition: all 0.4s ease;
         }
 
         .nav-link:hover {
-            color: #0078d4;
-            background: linear-gradient(135deg, #f3f2f1, #e1e5e9);
-            transform: translateY(-2px);
+            color: #00d4ff;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 120, 212, 0.1));
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 212, 255, 0.2);
         }
 
         .nav-link.active {
-            color: #0078d4;
-            background: linear-gradient(135deg, #f3f2f1, #e1e5e9);
-            box-shadow: 0 2px 8px rgba(0, 120, 212, 0.2);
+            color: #00d4ff;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(0, 120, 212, 0.2));
+            box-shadow: 0 4px 16px rgba(0, 212, 255, 0.3);
         }
 
         .nav-link.coming-soon {
@@ -210,46 +229,118 @@
 
         .footer {
             text-align: center;
-            padding: 30px 0;
-            color: #605e5c;
+            padding: 40px 0;
+            color: #b3b3b3;
+            font-weight: 300;
         }
 
         /* Content styles */
         .content-section {
-            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-            border-radius: 20px;
-            padding: 60px;
-            margin-bottom: 40px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            border: 1px solid #d2d0ce;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d30 50%, #1a1a1a 100%);
+            border-radius: 24px;
+            padding: 50px;
+            margin-bottom: 60px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
         }
 
         .section-title {
             font-size: 2.2rem;
-            color: #323130;
+            color: #ffffff;
             margin-bottom: 30px;
-            font-weight: 800;
-            background: linear-gradient(135deg, #323130, #0078d4);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-weight: 600;
+            background: linear-gradient(135deg, #ffffff 0%, #00d4ff 50%, #0078d4 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            letter-spacing: -0.01em;
+        }
+
+        .section-title i {
+            color: #00d4ff;
+            font-size: 2rem;
+            filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.6));
+        }
+
+        .section-content {
+            color: #b3b3b3;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        .section-content ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        .section-content li {
+            margin: 8px 0;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #00d4ff 0%, #0078d4 50%, #5c2d91 100%);
+            color: white;
+            padding: 18px 60px;
+            border: none;
+            border-radius: 20px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 8px 32px rgba(0, 212, 255, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1);
+            letter-spacing: 0.02em;
+            margin: 0 10px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-6px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(0, 212, 255, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, #00b8e6, #005a9e, #4a1a7a);
+        }
+
+        .cta-button.secondary {
+            background: linear-gradient(135deg, #2d2d30 0%, #3c3c3c 100%);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .cta-button.secondary:hover {
+            background: linear-gradient(135deg, #3c3c3c 0%, #4c4c4c 100%);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
         }
 
         .section-subtitle {
             font-size: 1.6rem;
-            color: #323130;
+            color: #ffffff;
             margin: 30px 0 20px;
-            font-weight: 700;
+            font-weight: 600;
         }
 
         .highlight-box {
-            background: linear-gradient(135deg, #fff4ce 0%, #fff8e1 50%, #ffecb3 100%);
-            color: #323130;
-            padding: 30px;
-            border-radius: 16px;
-            margin: 30px 0;
-            border-left: 6px solid #ff8c00;
-            box-shadow: 0 6px 20px rgba(255, 140, 0, 0.15);
+            background: linear-gradient(135deg, #2d2d30 0%, #3c3c3c 50%, #2d2d30 100%);
+            color: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+            border-left: 6px solid #00d4ff;
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.1);
+        }
+
+        .highlight-box h3 {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .highlight-box p {
+            color: #e0e0e0;
+            font-weight: 400;
         }
 
         .step-list {
@@ -259,15 +350,22 @@
         }
 
         .step-list li {
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             padding-left: 0;
             counter-increment: step-counter;
+            color: #ffffff;
+            font-size: 1.2rem;
+            font-weight: 400;
+            line-height: 1.7;
         }
 
         .step-number {
             font-weight: 700;
-            color: #0078d4;
-            margin-right: 10px;
+            color: #00d4ff;
+            margin-right: 15px;
+            font-size: 1.2rem;
+            filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.8));
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.6);
         }
 
         .step-image {
@@ -278,45 +376,59 @@
         }
 
         .note-box {
-            background: linear-gradient(135deg, #e1e5e9 0%, #f3f2f1 100%);
-            padding: 20px;
-            border-radius: 12px;
-            margin: 30px 0;
-            border-left: 6px solid #0078d4;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d30 100%);
+            padding: 30px;
+            border-radius: 16px;
+            margin: 40px 0;
+            border-left: 6px solid #00d4ff;
+            color: #b3b3b3;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
         }
 
         .breadcrumb {
             display: flex;
             align-items: center;
-            margin-bottom: 20px;
-            color: #605e5c;
-            font-size: 0.9rem;
+            margin-bottom: 30px;
+            color: #b3b3b3;
+            font-size: 1rem;
+            font-weight: 300;
         }
 
         .breadcrumb a {
-            color: #0078d4;
+            color: #00d4ff;
             text-decoration: none;
+            transition: color 0.3s ease;
         }
 
         .breadcrumb .separator {
             margin: 0 10px;
-            color: #a19f9d;
+            color: #666666;
         }
 
         .time-estimate {
             display: inline-block;
-            background: linear-gradient(135deg, #e1e5e9 0%, #f3f2f1 100%);
-            padding: 8px 16px;
-            border-radius: 20px;
-            margin: 20px 0;
-            font-size: 0.9rem;
-            color: #605e5c;
-            border: 1px solid #d2d0ce;
+            background: linear-gradient(135deg, #2d2d30 0%, #3c3c3c 100%);
+            padding: 12px 24px;
+            border-radius: 24px;
+            margin: 30px 0;
+            font-size: 1rem;
+            color: #b3b3b3;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
         }
 
         @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header {
+                padding: 40px 30px;
+                margin-bottom: 40px;
+            }
+            
             .title {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             
             .content-layout {
@@ -326,6 +438,15 @@
             .side-nav { 
                 position: static;
                 margin-bottom: 30px;
+            }
+            
+            .content-section {
+                padding: 30px 20px;
+                margin-bottom: 40px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
             }
 
             .nav-container {
@@ -349,7 +470,7 @@
         <nav class="navigation">
             <div class="nav-container">
                 <a href="index.html" class="nav-logo">
-                    <img src="images/Unknown.jpeg" alt="Logo" class="logo-small">
+                    <img src="images/Microsoft-Copilot-Studio-Icon-2024.png.webp" alt="Logo" class="logo-small">
                     Quantum Squad
                 </a>
                 <div class="nav-links">
@@ -363,7 +484,7 @@
 
         <header class="header" id="top">
             <div class="header-logo-container">
-                <img src="images/Unknown.jpeg" alt="Logo" class="header-logo" style="width: 120px; height: 120px; object-fit: contain;">
+                <img src="images/Microsoft-Copilot-Studio-Icon-2024.png.webp" alt="Logo" class="header-logo" style="width: 120px; height: 120px; object-fit: contain;">
             </div>
             <h1 class="title">Workshop Setup</h1>
             <p class="subtitle">Set up your repair environment, Copilot Studio trial, and Teams workspace</p>
@@ -371,7 +492,7 @@
                 <i class="fas fa-clock"></i> Time to complete: 20 mins
             </div>
             <div style="margin-top: 20px;">
-                <a href="first-friend-agent.html" style="color: #0078d4; text-decoration: none; font-size: 1rem; display: inline-flex; align-items: center; padding: 10px 20px; border: 1px solid #0078d4; border-radius: 8px; transition: all 0.3s ease;">
+                <a href="first-friend-agent.html" class="cta-button secondary">
                     <i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Back to Engine Repair
                 </a>
             </div>
@@ -485,7 +606,7 @@
                     </div>
 
                     <div style="text-align: center; margin-top: 40px;">
-                        <a href="first-friend-agent.html" class="nav-link active" style="display: inline-block; padding: 15px 30px; background: linear-gradient(135deg, #0078d4, #106ebe, #107c10); color: white; border-radius: 8px; text-decoration: none; font-weight: 600; box-shadow: 0 4px 12px rgba(0, 120, 212, 0.3);">
+                        <a href="first-friend-agent.html" class="cta-button">
                             Continue to Engine Repair <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
                         </a>
                     </div>
