@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop Setup - Quantum Squad</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Mascot image styles */
+        .mascot-img {
+            width: 180px;
+            height: 180px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+        
+        .logo-small {
+            height: 24px;
+            width: auto;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+        
+        .logo-medium {
+            height: 40px;
+            width: auto;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        
+        .header-logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .header-logo {
+            height: 60px;
+            width: auto;
+            margin-right: 15px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f3f2f1 0%, #e1e5e9 50%, #f8f9fa 100%);
+            min-height: 100vh;
+            color: #323130;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 80px 60px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #e1e5e9 100%);
+            border-radius: 24px;
+            margin-bottom: 80px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+            border: 1px solid #d2d0ce;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #0078d4, #106ebe, #107c10, #ff8c00);
+        }
+
+        .title {
+            font-size: 3.5rem;
+            color: #323130;
+            margin-bottom: 30px;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            background: linear-gradient(135deg, #323130, #0078d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            color: #605e5c;
+            margin-bottom: 50px;
+            line-height: 1.7;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
+        }
+
+        .navigation {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            border: 1px solid #d2d0ce;
+        }
+
+        /* Content layout with sticky sidebar */
+        .content-layout {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 32px;
+            align-items: start;
+        }
+
+        .side-nav {
+            position: sticky;
+            top: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border: 1px solid #d2d0ce;
+            border-radius: 12px;
+            padding: 16px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        .side-title {
+            font-weight: 700;
+            color: #323130;
+            margin-bottom: 8px;
+        }
+
+        .side-links {
+            list-style: none;
+        }
+
+        .side-links li { margin: 6px 0; }
+
+        .side-link {
+            display: block;
+            padding: 8px 12px;
+            border-radius: 8px;
+            color: #605e5c;
+            text-decoration: none;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .side-link:hover { background: #f3f2f1; color: #0078d4; }
+        .side-link.active { background: linear-gradient(135deg, #f3f2f1, #e1e5e9); color: #0078d4; box-shadow: 0 2px 8px rgba(0,120,212,0.2); }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #323130;
+            text-decoration: none;
+            background: linear-gradient(135deg, #323130, #0078d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: #605e5c;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #0078d4;
+            background: linear-gradient(135deg, #f3f2f1, #e1e5e9);
+            transform: translateY(-2px);
+        }
+
+        .nav-link.active {
+            color: #0078d4;
+            background: linear-gradient(135deg, #f3f2f1, #e1e5e9);
+            box-shadow: 0 2px 8px rgba(0, 120, 212, 0.2);
+        }
+
+        .nav-link.coming-soon {
+            color: #a19f9d;
+            cursor: not-allowed;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #605e5c;
+        }
+
+        /* Content styles */
+        .content-section {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 20px;
+            padding: 60px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid #d2d0ce;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            color: #323130;
+            margin-bottom: 30px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #323130, #0078d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            font-size: 1.6rem;
+            color: #323130;
+            margin: 30px 0 20px;
+            font-weight: 700;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #fff4ce 0%, #fff8e1 50%, #ffecb3 100%);
+            color: #323130;
+            padding: 30px;
+            border-radius: 16px;
+            margin: 30px 0;
+            border-left: 6px solid #ff8c00;
+            box-shadow: 0 6px 20px rgba(255, 140, 0, 0.15);
+        }
+
+        .step-list {
+            margin: 30px 0;
+            list-style-position: inside;
+        }
+
+        .step-list li {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        .step-number {
+            font-weight: 700;
+            color: #0078d4;
+            margin-right: 10px;
+        }
+
+        .step-image {
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            max-width: 100%;
+        }
+
+        .note-box {
+            background: linear-gradient(135deg, #e1e5e9 0%, #f3f2f1 100%);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border-left: 6px solid #0078d4;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            color: #605e5c;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb a {
+            color: #0078d4;
+            text-decoration: none;
+        }
+
+        .breadcrumb .separator {
+            margin: 0 10px;
+            color: #a19f9d;
+        }
+
+        .time-estimate {
+            display: inline-block;
+            background: linear-gradient(135deg, #e1e5e9 0%, #f3f2f1 100%);
+            padding: 8px 16px;
+            border-radius: 20px;
+            margin: 20px 0;
+            font-size: 0.9rem;
+            color: #605e5c;
+            border: 1px solid #d2d0ce;
+        }
+
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2rem;
+            }
+            
+            .content-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .side-nav { 
+                position: static;
+                margin-bottom: 30px;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .content-section {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navigation">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">
+                    <img src="images/Unknown.jpeg" alt="Logo" class="logo-small">
+                    Quantum Squad
+                </a>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="first-friend-agent.html" class="nav-link">Engine Repair</a>
+                    <a href="#" class="nav-link coming-soon">Transmission Fix (Coming Soon)</a>
+                    <a href="#" class="nav-link coming-soon">Performance Tune (Coming Soon)</a>
+                </div>
+            </div>
+        </nav>
+
+        <header class="header" id="top">
+            <div class="header-logo-container">
+                <img src="images/Unknown.jpeg" alt="Logo" class="header-logo" style="width: 120px; height: 120px; object-fit: contain;">
+            </div>
+            <h1 class="title">Workshop Setup</h1>
+            <p class="subtitle">Set up your repair environment, Copilot Studio trial, and Teams workspace</p>
+            <div class="time-estimate">
+                <i class="fas fa-clock"></i> Time to complete: 20 mins
+            </div>
+        </header>
+
+        <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="separator">›</span>
+            <span>Workshop Setup</span>
+        </div>
+
+        <div class="content-layout">
+            <aside class="side-nav">
+                <div class="side-title">On this page</div>
+                <ul class="side-links">
+                    <li><a class="side-link" href="#overview">Overview</a></li>
+                    <li><a class="side-link" href="#prerequisites">Prerequisites</a></li>
+                    <li><a class="side-link" href="#step1">Step 1: Microsoft Account</a></li>
+                    <li><a class="side-link" href="#step2">Step 2: Developer Environment</a></li>
+                </ul>
+            </aside>
+
+            <div>
+                <div class="content-section" id="overview">
+                    <h2 class="section-title">Workshop Overview</h2>
+                    <p>Welcome to the Quantum Squad Workshop Setup! Before we can start repairing Alex's onboarding process, we need to set up our repair tools and environment. This guide will walk you through the process of setting up your Microsoft Copilot Studio trial and creating a development environment where you'll build your repair agents.</p>
+                    
+                    <div class="highlight-box">
+                        <h3 style="margin-bottom: 15px; font-size: 1.3rem;">🔧 Repair Shop Preparation</h3>
+                        <p>Just like a mechanic needs their tools and workspace ready before fixing a car, you'll need to set up your digital repair shop before building your onboarding repair agents. This one-time setup will give you everything you need to build powerful, intelligent agents using Microsoft Copilot Studio.</p>
+                    </div>
+                </div>
+
+                <div class="content-section" id="prerequisites">
+                    <h2 class="section-title">Prerequisites</h2>
+                    <p>Before you begin, make sure you have:</p>
+                    <ul style="margin: 20px 0 20px 40px;">
+                        <li>A work or school Microsoft account (personal accounts won't work for this workshop)</li>
+                        <li>Administrator permissions on your Microsoft 365 tenant (to create the developer environment)</li>
+                        <li>A modern web browser (Microsoft Edge, Google Chrome, or Safari)</li>
+                        <li>Approximately 20 minutes to complete the setup process</li>
+                    </ul>
+                    
+                    <div class="note-box">
+                        <strong>Note:</strong> If you don't have a work/school Microsoft account with admin permissions, you can create a Microsoft 365 Developer tenant for free at <a href="https://developer.microsoft.com/en-us/microsoft-365/dev-program" target="_blank">Microsoft 365 Developer Program</a>.
+                    </div>
+                </div>
+
+                <div class="content-section" id="step1">
+                    <h2 class="section-title">Step 1: Sign in to your work/school Microsoft account</h2>
+                    <p>First, we'll set up your Microsoft Copilot Studio trial:</p>
+
+                    <ol class="step-list">
+                        <li>
+                            <span class="step-number">1.1</span> Go to <a href="https://www.microsoft.com/en-us/microsoft-365-copilot/microsoft-copilot-studio" target="_blank">https://www.microsoft.com/en-us/microsoft-365-copilot/microsoft-copilot-studio</a>
+                        </li>
+                        
+                        <li>
+                            <span class="step-number">1.2</span> Select "Try for free"
+                            <img src="Step%2000.fld/image001.png" alt="Microsoft Copilot Studio website with Try for free button" class="step-image">
+                        </li>
+                        
+                        <li>
+                            <span class="step-number">1.3</span> Enter your work email account
+                            <img src="Step%2000.fld/image002.png" alt="Microsoft 365 Signup page" class="step-image">
+                        </li>
+                        
+                        <li>
+                            <span class="step-number">1.4</span> It should recognize your account. Select "Sign In"
+                        </li>
+                        
+                        <li>
+                            <span class="step-number">1.5</span> Select "Start free trial"
+                            <img src="Step%2000.fld/image003.png" alt="Microsoft 365 Signup page with Start free trial button" class="step-image">
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="content-section" id="step2">
+                    <h2 class="section-title">Step 2: Create a developer environment</h2>
+                    <p>Using the same Microsoft 365 tenant from Step 1, we'll now set up a Power Apps Developer Plan to create a free development environment for building and testing with Copilot Studio:</p>
+
+                    <ol class="step-list">
+                        <li>
+                            <span class="step-number">2.1</span> Using the same Microsoft 365 tenant in Step 1, sign up for a Power Apps Developer Plan to create a free development environment to build and test with Copilot Studio.
+                        </li>
+                        
+                        <li>
+                            <span class="step-number">2.2</span> Go to <a href="https://www.microsoft.com/en-sg/power-platform/products/power-apps/free" target="_blank">https://www.microsoft.com/en-sg/power-platform/products/power-apps/free</a>
+                        </li>
+                        
+                        <li>
+                            <span class="step-number">2.3</span> Click "Start Free"
+                        </li>
+                        
+                        <li>
+                            <span class="step-number">2.4</span> Enter your email address, tick the checkbox and click "Start free"
+                            <img src="Step%2000.fld/image004.png" alt="Sign up for Power Apps Developer Plan" class="step-image">
+                        </li>
+                        
+                        <li>
+                            <span class="step-number">2.5</span> After signing up for the Developer Plan, you'll be redirected to <a href="https://make.powerapps.com/" target="_blank">Power Apps</a>. The environment uses your name, for example <strong>Adele Vance's environment</strong>. If there's already an environment with that name, the developer new environment is named <strong>Adele Vance's (1)</strong> environment. Use this developer environment in Copilot Studio when completing the labs.
+                        </li>
+                    </ol>
+
+                    <div class="highlight-box">
+                        <h3 style="margin-bottom: 15px; font-size: 1.3rem;">✅ Setup Complete!</h3>
+                        <p>You've successfully set up your repair environment! You now have access to Microsoft Copilot Studio and a developer environment where you can build your onboarding repair agents. You're ready to start the Engine Repair with the First Friend Agent.</p>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 40px;">
+                        <a href="first-friend-agent.html" class="nav-link active" style="display: inline-block; padding: 15px 30px; background: linear-gradient(135deg, #0078d4, #106ebe, #107c10); color: white; border-radius: 8px; text-decoration: none; font-weight: 600; box-shadow: 0 4px 12px rgba(0, 120, 212, 0.3);">
+                            Continue to Engine Repair <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>Created with 💡 by Quantum Squad | Inspired by Microsoft Agent Academy</p>
+            <p style="margin-top: 10px; font-size: 0.9rem;">
+                <a href="https://microsoft.github.io/agent-academy/" style="color: #0078d4; text-decoration: none;">
+                    Learn more about Microsoft Agent Academy
+                </a>
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // Add some interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Side nav active link highlighting
+            const links = document.querySelectorAll('.side-link');
+            const sections = Array.from(links).map(l => document.querySelector(l.getAttribute('href'))).filter(Boolean);
+
+            const onScroll = () => {
+                let index = sections.findIndex((sec, i) => {
+                    const rect = sec.getBoundingClientRect();
+                    return rect.top <= 120 && rect.bottom >= 120;
+                });
+                if (index === -1) return;
+                links.forEach(l => l.classList.remove('active'));
+                links[index].classList.add('active');
+            };
+            document.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+            
+            // Smooth internal link scroll
+            links.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                    setTimeout(onScroll, 350);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
