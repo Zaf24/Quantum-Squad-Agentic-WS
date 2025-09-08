@@ -808,7 +808,7 @@
             <p style="color: #b3b3b3; margin-bottom: 30px; font-size: 1.2rem; font-weight: 400;">
                 Begin with the Engine Repair (First Friend Agent) and get Alex's onboarding back on track
             </p>
-            <a href="#engine-repair" class="cta-button">
+            <a href="first-friend-agent.html" class="cta-button">
                 <i class="fas fa-wrench"></i> Start Engine Repair
             </a>
         </div>
@@ -829,11 +829,7 @@
     <script>
         // Add some interactive elements
         document.addEventListener('DOMContentLoaded', function() {
-            // Navigation for main CTA button
-            document.querySelector('.cta-section .cta-button').addEventListener('click', function(e) {
-                e.preventDefault();
-                window.location.href = 'first-friend-agent.html';
-            });
+            // CTA button navigation is handled by href links
 
             // Add hover effects to agent cards
             const agentCards = document.querySelectorAll('.agent-card');
